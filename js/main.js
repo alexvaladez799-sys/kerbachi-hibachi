@@ -74,8 +74,9 @@ function initAnchorScroll() {
     const target = document.querySelector(hash);
     if (!target) return;
     e.preventDefault();
+    const navH = document.getElementById('mainNav')?.offsetHeight || 100;
     window.scrollTo({
-      top: target.getBoundingClientRect().top + window.scrollY - 72,
+      top: target.getBoundingClientRect().top + window.scrollY - navH,
       behavior: 'smooth',
     });
   });
@@ -154,16 +155,25 @@ function initParallax() {
   });
 }
 
-/* ── MOBILE BAR HIDE NEAR FOOTER ────────────────────── */
+/* ── MOBILE BAR — show only after scrolling 60% of page ─ */
 function initMobBar() {
   const bar    = $('.mob-bar');
   const footer = $('footer');
-  if (!bar || !footer) return;
+  if (!bar) return;
+
   const check = () => {
-    const ftop = footer.getBoundingClientRect().top;
-    bar.style.opacity      = ftop < 80 ? '0' : '1';
-    bar.style.pointerEvents = ftop < 80 ? 'none' : 'auto';
+    const scrolled  = window.scrollY + window.innerHeight;
+    const total     = document.documentElement.scrollHeight;
+    const pct       = scrolled / total;
+    const nearFoot  = footer ? footer.getBoundingClientRect().top < 80 : false;
+
+    if (pct > 0.6 && !nearFoot) {
+      bar.classList.add('mob-bar--visible');
+    } else {
+      bar.classList.remove('mob-bar--visible');
+    }
   };
+
   window.addEventListener('scroll', check, { passive: true });
   check();
 }
