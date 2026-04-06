@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kerbachi Hibachi — Fresh. Fast. Fired to Perfection. Hibachi made to order in Kerman, CA. Order online or pickup today." />
+  <title>Kerbachi Hibachi | Kerman, CA</title>
+
+  <meta property="og:title"       content="Kerbachi Hibachi | Kerman, CA" />
+  <meta property="og:description" content="Fresh. Fast. Fired to Perfection. Hibachi made to order in Kerman, California." />
+  <meta property="og:type"        content="restaurant" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Kerbachi Hibachi",
+    "description": "Hibachi made to order — takeout and fast pickup in Kerman, CA.",
+    "servesCuisine": "Japanese Hibachi",
+    "priceRange": "$$",
+    "telephone": "+15595550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "100 N Madera Ave",
+      "addressLocality": "Kerman",
+      "addressRegion": "CA",
+      "postalCode": "93630"
+    },
+    "openingHours": ["Tu-Su 11:00-21:00"]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+
+  <!-- GSAP (ScrollTrigger only — no Lenis) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ── MOBILE STICKY ORDER BAR ── -->
+  <div class="mobile-order-bar" aria-hidden="true">
+    <a href="tel:+15595550100" class="mob-bar__call">
+      <i class="fas fa-phone"></i> Call to Order
+    </a>
+    <a href="#order" class="mob-bar__order">
+      Order Now <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="nav" id="mainNav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo" aria-label="Kerbachi Hibachi home">
+        <img src="remove_the_black_background_completely_and_make_it-1775374619374.png" alt="Kerbachi Hibachi" class="nav__logo-img" />
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav__links">
+          <li><a href="#featured" class="nav__link">Menu</a></li>
+          <li><a href="#why"      class="nav__link">About</a></li>
+          <li><a href="#location" class="nav__link">Find Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__cta">
+        <a href="tel:+15595550100" class="nav__phone-text">(559) 555-0100</a>
+        <a href="#order" class="btn btn--fire btn--sm">Order Now</a>
+      </div>
+
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav__drawer" id="navDrawer" aria-hidden="true">
+      <ul>
+        <li><a href="#featured">Menu</a></li>
+        <li><a href="#why">About</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#location">Find Us</a></li>
+      </ul>
+      <div class="drawer__ctas">
+        <a href="tel:+15595550100" class="btn btn--outline btn--full">(559) 555-0100</a>
+        <a href="#order" class="btn btn--fire btn--full">Order Now</a>
+      </div>
+    </div>
+    <div class="nav__overlay" id="navOverlay"></div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         1. HERO
+    ══════════════════════════════════════ -->
+    <section id="hero" class="hero">
+
+      <!-- Cinematic background image -->
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <!-- Dark gradient overlay -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- Hero text + CTAs -->
+      <div class="hero-content">
+        <p class="hero-eyebrow">Kerman, California</p>
+        <h1>Hibachi. Elevated.<br><em>Made to Order.</em></h1>
+        <p class="hero-sub">Bold flavors, fresh ingredients, fired right in front of you.<br>Pickup ready in minutes.</p>
+        <div class="hero-btns">
+          <a href="#order" class="cta-btn">Order Now</a>
+          <a href="menu.html" class="cta-btn cta-btn--ghost">View Full Menu</a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="fas fa-map-marker-alt"></i> 100 N Madera Ave, Kerman, CA</span>
+          <span class="hero-meta-dot">·</span>
+          <span><i class="fas fa-clock"></i> Tue–Sun 11am–9pm</span>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#featured" class="hero-scroll-cue" aria-label="Scroll to menu">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+
+    </section>
+
+    <!-- ══════════════════════════════════════
+         2. FEATURED ITEMS
+    ══════════════════════════════════════ -->
+    <section id="featured" class="featured section">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Best Sellers</span>
+          <h2>Hot off the Grill</h2>
+          <p>Our most-ordered plates. Cooked fresh, every time.</p>
+        </div>
+
+        <div class="featured-grid">
+
+          <article class="dish-card">
+            <div class="dish-card__img">
+              <img src="Steak_Plate.png" alt="Hibachi Steak Plate" loading="lazy" />
+              <div class="dish-card__overlay">
+                <a href="#order" class="dish-card__order-btn">Order This</a>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <h3>Hibachi Steak</h3>
+              <p>Prime beef, teppanyaki-seared, sesame fried rice &amp; grilled veggies</p>
+              <div class="dish-card__footer">
+                <span class="dish-price">$18</span>
+                <span class="dish-badge">Most Ordered</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-card__img">
+              <img src="ShrimpPlate.png" alt="Hibachi Shrimp Plate" loading="lazy" />
+              <div class="dish-card__overlay">
+                <a href="#order" class="dish-card__order-btn">Order This</a>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <h3>Volcano Shrimp</h3>
+              <p>Jumbo shrimp, hibachi fried rice &amp; yum yum sauce</p>
+              <div class="dish-card__footer">
+                <span class="dish-price">$16</span>
+                <span class="dish-badge">Fan Favorite</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-card__img">
+              <img src="Chicken.png" alt="Hibachi Chicken Plate" loading="lazy" />
+              <div class="dish-card__overlay">
+                <a href="#order" class="dish-card__order-btn">Order This</a>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <h3>Hibachi Chicken</h3>
+              <p>Teriyaki chicken, sesame fried rice &amp; fresh vegetables</p>
+              <div class="dish-card__footer">
+                <span class="dish-price">$14</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-card__img">
+              <img src="New_York.png" alt="New York Strip Plate" loading="lazy" />
+              <div class="dish-card__overlay">
+                <a href="#order" class="dish-card__order-btn">Order This</a>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <h3>New York Strip</h3>
+              <p>USDA prime strip, hibachi butter glaze, fried rice &amp; veggies</p>
+              <div class="dish-card__footer">
+                <span class="dish-price">$20</span>
+                <span class="dish-badge">Premium Cut</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="featured-cta">
+          <a href="menu.html" class="btn btn--outline">See Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         3. MENU PREVIEW
+    ══════════════════════════════════════ -->
+    <section id="menu-preview" class="menu-preview section section--dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">The Menu</span>
+          <h2>Simple. Fresh. Fire.</h2>
+        </div>
+
+        <div class="menu-preview__grid">
+          <div class="menu-col">
+            <h3 class="menu-col__title">Hibachi Plates</h3>
+            <ul class="menu-list">
+              <li><span>Hibachi Chicken</span><span>$14</span></li>
+              <li><span>Hibachi Shrimp</span><span>$16</span></li>
+              <li><span>Hibachi Steak</span><span>$18</span></li>
+              <li><span>New York Strip</span><span>$20</span></li>
+              <li><span>Calamari Hibachi</span><span>$15</span></li>
+              <li><span>Garden Hibachi <em>(V)</em></span><span>$12</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-col">
+            <h3 class="menu-col__title">Combo Plates</h3>
+            <ul class="menu-list">
+              <li><span>Steak &amp; Chicken</span><span>$22</span></li>
+              <li><span>Steak &amp; Shrimp</span><span>$24</span></li>
+              <li><span>Chicken &amp; Shrimp</span><span>$20</span></li>
+              <li><span>NY Strip &amp; Shrimp</span><span>$26</span></li>
+              <li><span>Triple Combo</span><span>$28</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-col">
+            <h3 class="menu-col__title">Sides &amp; Extras</h3>
+            <ul class="menu-list">
+              <li><span>Ginger Salad</span><span>$4</span></li>
+              <li><span>Miso Soup</span><span>$3</span></li>
+              <li><span>Extra Fried Rice</span><span>$4</span></li>
+              <li><span>Gyoza (6 pcs)</span><span>$7</span></li>
+              <li><span>Edamame</span><span>$5</span></li>
+              <li><span>Yum Yum Sauce</span><span>$1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="menu-preview__note">All plates include hibachi fried rice, grilled vegetables &amp; your choice of sauce.</p>
+
+        <div class="featured-cta">
+          <a href="menu.html" class="btn btn--fire">Full Menu &amp; Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         4. WHY KERBACHI
+    ══════════════════════════════════════ -->
+    <section id="why" class="why section">
+      <div class="why-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Why Kerbachi</span>
+          <h2>No shortcuts. No compromises.</h2>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card__icon"><i class="fas fa-fire-alt"></i></div>
+            <h3>Cooked Fresh</h3>
+            <p>Every order goes straight to the grill. No pre-cooked batches. No reheating.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon"><i class="fas fa-gem"></i></div>
+            <h3>Quality Ingredients</h3>
+            <p>USDA prime cuts, fresh vegetables, real sauces. You taste the difference.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon"><i class="fas fa-bolt"></i></div>
+            <h3>Fast Pickup</h3>
+            <p>Order ahead or walk in. Your food is ready fast — no long waits.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon"><i class="fas fa-heart"></i></div>
+            <h3>Kerman's Favorite</h3>
+            <p>We're a local spot built on repeat customers and real word-of-mouth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         5. HOW IT WORKS
+    ══════════════════════════════════════ -->
+    <section id="how" class="how section section--dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">How It Works</span>
+          <h2>From grill to your hands — fast.</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">01</div>
+            <div class="step__body">
+              <h3>Order</h3>
+              <p>Call us or walk in. Tell us what you want — we'll take it from there.</p>
+            </div>
+          </div>
+          <div class="step__arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+          <div class="step">
+            <div class="step__num">02</div>
+            <div class="step__body">
+              <h3>We Cook It</h3>
+              <p>Your plate goes straight to the hibachi grill — cooked fresh to order.</p>
+            </div>
+          </div>
+          <div class="step__arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+          <div class="step">
+            <div class="step__num">03</div>
+            <div class="step__body">
+              <h3>Pick It Up</h3>
+              <p>Ready in minutes. Hot, fresh, and packed for you. No rush, no wait.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-cta" style="margin-top:3rem;">
+          <a href="tel:+15595550100" class="btn btn--fire btn--lg">Call to Order — (559) 555-0100</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         6. FOOD GALLERY
+    ══════════════════════════════════════ -->
+    <section id="gallery" class="gallery section">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">The Food</span>
+          <h2>Just look at it.</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item--tall">
+            <img src="Steak_Plate.png" alt="Hibachi Steak" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="Chicken.png" alt="Hibachi Chicken" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="ShrimpPlate.png" alt="Volcano Shrimp" loading="lazy" />
+          </div>
+          <div class="gallery-item gallery-item--wide">
+            <img src="New_York.png" alt="New York Strip" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="CalamriPlate.jpg" alt="Calamari Hibachi" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="Vegetarian.png" alt="Garden Hibachi" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         7. LOCATION + HOURS
+    ══════════════════════════════════════ -->
+    <section id="location" class="location section section--dark">
+      <div class="container location__inner">
+
+        <div class="location__info">
+          <span class="label">Find Us</span>
+          <h2>Come Pick Up<br>Something Good.</h2>
+
+          <div class="location__details">
+            <div class="loc-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Address</strong>
+                <address>100 N Madera Ave<br>Kerman, CA 93630</address>
+              </div>
+            </div>
+            <div class="loc-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Hours</strong>
+                <p>Tuesday – Sunday<br>11:00 AM – 9:00 PM</p>
+                <p class="loc-closed">Monday: Closed</p>
+              </div>
+            </div>
+            <div class="loc-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Order by Phone</strong>
+                <p><a href="tel:+15595550100">(559) 555-0100</a></p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=100+N+Madera+Ave+Kerman+CA+93630"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--outline" style="margin-top:2rem;">
+            Get Directions
+          </a>
+        </div>
+
+        <div class="location__map">
+          <iframe
+            title="Kerbachi Hibachi location map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3210.000000000001!2d-120.0608!3d36.7231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945000000000%3A0x0!2sKerman%2C+CA+93630!5e0!3m2!1sen!2sus!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="border:0; filter:invert(90%) hue-rotate(180deg) saturate(0.6) brightness(0.85);"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         8. FINAL CTA
+    ══════════════════════════════════════ -->
+    <section id="order" class="cta-section section">
+      <div class="cta-section__glow" aria-hidden="true"></div>
+      <div class="container cta-section__content">
+        <span class="label label--light">Ready?</span>
+        <h2 class="cta-section__headline">Order Your Plate Today.</h2>
+        <p class="cta-section__sub">Hot off the grill. Ready for pickup. Kerman's best hibachi.</p>
+        <div class="cta-section__btns">
+          <a href="tel:+15595550100" class="btn btn--fire btn--xl">(559) 555-0100</a>
+          <a href="menu.html" class="btn btn--ghost btn--lg">Browse Menu</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="remove_the_black_background_completely_and_make_it-1775374619374.png" alt="Kerbachi Hibachi" class="footer__logo" loading="lazy" />
+        <p>Fresh. Fast. Fired to Perfection.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <p>Tue – Sun: 11am – 9pm</p>
+        <p>Monday: Closed</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p><a href="tel:+15595550100">(559) 555-0100</a></p>
+        <address>100 N Madera Ave<br>Kerman, CA 93630</address>
+      </div>
+
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+        </div>
+        <a href="menu.html" class="btn btn--outline btn--sm" style="margin-top:1.25rem;">View Menu</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Kerbachi Hibachi, Kerman CA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kerbachi Hibachi — Full Menu. Hibachi plates, combos, sides, drinks and more. Kerman, CA." />
+  <title>Full Menu | Kerbachi Hibachi — Kerman, CA</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── RESET & VARS ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-bg:       #0A0A0A;
+      --clr-bg-2:     #111111;
+      --clr-surface:  #181818;
+      --clr-border:   rgba(255,255,255,0.07);
+      --clr-gold:     #D4A04A;
+      --clr-accent:   #E8833A;
+      --clr-cream:    #F2EDE4;
+      --clr-text:     #EDEDED;
+      --clr-muted:    rgba(237,237,237,0.5);
+      --ff-display:   'Playfair Display', Georgia, serif;
+      --ff-body:      'Inter', system-ui, sans-serif;
+      --ease-out:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      font-family: var(--ff-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    address { font-style: normal; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 48px);
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 20px;
+    }
+
+    .nav__logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .nav__back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clr-muted);
+      transition: color 0.2s ease;
+    }
+    .nav__back:hover { color: var(--clr-gold); }
+
+    .nav__reserve {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-gold));
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+    .nav__reserve:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .menu-hero {
+      padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 64px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .menu-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(232,131,58,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .menu-hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clr-gold);
+      margin-bottom: 16px;
+    }
+    .menu-hero__tag::before, .menu-hero__tag::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--clr-gold);
+      opacity: 0.6;
+    }
+
+    .menu-hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--clr-cream);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .menu-hero h1 em {
+      font-style: italic;
+      color: var(--clr-gold);
+    }
+
+    .menu-hero p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--clr-muted);
+    }
+
+    .gold-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+      opacity: 0.3;
+      margin: 0;
+    }
+
+    /* ── MENU TABS ── */
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 36px 0 0;
+    }
+
+    .tab-btn {
+      padding: 10px 22px;
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--clr-muted);
+      font-family: var(--ff-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .tab-btn:hover {
+      border-color: var(--clr-gold);
+      color: var(--clr-gold);
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-gold));
+      border-color: transparent;
+      color: #fff;
+    }
+
+    /* ── MENU BODY ── */
+    .menu-body {
+      padding: clamp(40px, 6vw, 80px) 0 clamp(60px, 8vw, 120px);
+    }
+
+    /* ── MENU CATEGORY ── */
+    .menu-category {
+      display: none;
+    }
+    .menu-category.visible {
+      display: block;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .category-header h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--clr-cream);
+      margin-bottom: 8px;
+    }
+
+    .category-header p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--clr-muted);
+    }
+
+    /* ── HIBACHI PLATES GRID ── */
+    .plates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 16px;
+    }
+
+    .plate-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-out), border-color 0.3s ease, box-shadow 0.4s ease;
+    }
+    .plate-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,160,74,0.3);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.4);
+    }
+
+    .plate-card__img {
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      background: #1a0d00;
+    }
+    .plate-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .plate-card:hover .plate-card__img img {
+      transform: scale(1.06);
+    }
+    .plate-card__img::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(10,5,0,0.6) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .plate-card__body {
+      padding: 22px 24px 24px;
+    }
+
+    .plate-card__name {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--clr-cream);
+      margin-bottom: 8px;
+    }
+
+    .plate-card__desc {
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .plate-card__includes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .include-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--clr-muted);
+      border: 1px solid var(--clr-border);
+      border-radius: 2px;
+      padding: 2px 7px;
+    }
+
+    .plate-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .plate-card__price {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--clr-gold);
+    }
+
+    .plate-card__badge {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      border: 1px solid rgba(232,131,58,0.35);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    /* ── LIST MENU (for extras, drinks etc) ── */
+    .menu-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .menu-list-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 8px;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    .menu-list-item:hover {
+      border-color: rgba(212,160,74,0.2);
+      background: rgba(212,160,74,0.02);
+    }
+
+    .menu-list-item__text { flex: 1; }
+    .menu-list-item__name {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--clr-cream);
+      margin-bottom: 4px;
+    }
+    .menu-list-item__desc {
+      font-size: 0.82rem;
+      color: var(--clr-muted);
+      line-height: 1.5;
+    }
+    .menu-list-item__price {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--clr-gold);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    /* ── COMBO SECTION ── */
+    .combo-note {
+      text-align: center;
+      padding: 32px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border-gold, rgba(212,160,74,0.2));
+      border-radius: 10px;
+      margin-top: 32px;
+    }
+    .combo-note p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--clr-muted);
+      margin-bottom: 16px;
+    }
+    .combo-note strong { color: var(--clr-gold); font-style: normal; }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0 36px;
+    }
+    .section-divider__line {
+      flex: 1;
+      height: 1px;
+      background: var(--clr-border);
+    }
+    .section-divider__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-gold);
+      white-space: nowrap;
+    }
+
+    /* ── RESERVE BANNER ── */
+    .reserve-banner {
+      background: linear-gradient(135deg, rgba(232,131,58,0.12) 0%, rgba(212,160,74,0.06) 100%);
+      border: 1px solid rgba(212,160,74,0.2);
+      border-radius: 12px;
+      padding: clamp(32px, 4vw, 56px);
+      text-align: center;
+      margin-top: 64px;
+    }
+    .reserve-banner h3 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--clr-cream);
+      margin-bottom: 12px;
+    }
+    .reserve-banner p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--clr-muted);
+      margin-bottom: 28px;
+    }
+    .btn-reserve {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-gold));
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 24px rgba(232,131,58,0.3);
+    }
+    .btn-reserve:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(232,131,58,0.5);
+    }
+
+    /* ── FOOTER ── */
+    .menu-footer {
+      background: #080808;
+      border-top: 1px solid var(--clr-border);
+      padding: 28px 0;
+      text-align: center;
+    }
+    .menu-footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .menu-footer p {
+      font-size: 0.8rem;
+      color: rgba(237,237,237,0.3);
+    }
+    .menu-footer a {
+      color: var(--clr-gold);
+      transition: color 0.2s ease;
+    }
+    .menu-footer a:hover { color: var(--clr-cream); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .plates-grid { grid-template-columns: repeat(2, 1fr); }
+      .menu-list   { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .plates-grid { grid-template-columns: 1fr; }
+      .nav__reserve span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__back" aria-label="Back to homepage">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back</span>
+      </a>
+      <a href="index.html" class="nav__logo">
+        <img src="remove_the_black_background_completely_and_make_it-1775374619374.png" alt="Kerbachi Hibachi" />
+      </a>
+      <a href="tel:+15595550100" class="nav__reserve">
+        <i class="fas fa-phone"></i>
+        <span>Call to Order</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="menu-hero">
+    <div class="container">
+      <div class="menu-hero__tag">Full Menu</div>
+      <h1>Our <em>Signature</em> Menu</h1>
+      <p>Every plate cooked tableside over open flame — crafted with soul.</p>
+    </div>
+  </header>
+
+  <div class="gold-line"></div>
+
+  <!-- TABS -->
+  <div class="container">
+    <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+      <button class="tab-btn active" data-target="hibachi" role="tab" aria-selected="true">Hibachi Plates</button>
+      <button class="tab-btn" data-target="starters"  role="tab" aria-selected="false">Starters</button>
+      <button class="tab-btn" data-target="combos"    role="tab" aria-selected="false">Combos</button>
+      <button class="tab-btn" data-target="drinks"    role="tab" aria-selected="false">Drinks & Sake</button>
+      <button class="tab-btn" data-target="desserts"  role="tab" aria-selected="false">Desserts</button>
+    </div>
+  </div>
+
+  <!-- MENU BODY -->
+  <main class="menu-body">
+    <div class="container">
+
+      <!-- ── HIBACHI PLATES ── -->
+      <section id="hibachi" class="menu-category visible" role="tabpanel">
+        <div class="category-header">
+          <h2>Hibachi Plates</h2>
+          <p>All plates include hibachi fried rice, grilled vegetables &amp; your choice of dipping sauce</p>
+        </div>
+
+        <div class="plates-grid">
+
+          <div class="plate-card">
+            <div class="plate-card__img">
+              <img src="New_York.png" alt="New York Strip hibachi plate" loading="lazy" />
+            </div>
+            <div class="plate-card__body">
+              <h3 class="plate-card__name">New York Strip</h3>
+              <p class="plate-card__desc">USDA prime New York strip, hibachi-seared to your preference with garlic butter &amp; sake glaze</p>
+              <div class="plate-card__includes">
+                <span class="include-tag">Fried Rice</span>
+                <span class="include-tag">Grilled Veggies</span>
+                <span class="include-tag">Dipping Sauce</span>
+              </div>
+              <div class="plate-card__footer">
+                <span class="plate-card__price">$42</span>
+                <span class="plate-card__badge">Chef's Selection</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plate-card">
+            <div class="plate-card__img">
+              <img src="Steak_Plate.png" alt="Hibachi Steak plate" loading="lazy" />
+            </div>
+            <div class="plate-card__body">
+              <h3 class="plate-card__name">Hibachi Steak</h3>
+              <p class="plate-card__desc">Sliced filet mignon seared over teppanyaki flame, corn fried rice, broccoli &amp; signature sauce</p>
+              <div class="plate-card__includes">
+                <span class="include-tag">Fried Rice</span>
+                <span class="include-tag">Grilled Veggies</span>
+                <span class="include-tag">Dipping Sauce</span>
+              </div>
+              <div class="plate-card__footer">
+                <span class="plate-card__price">$48</span>
+                <span class="plate-card__badge">Fan Favorite</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plate-card">
+            <div class="plate-card__img">
+              <img src="Chicken.png" alt="Hibachi Chicken plate" loading="lazy" />
+            </div>
+            <div class="plate-card__body">
+              <h3 class="plate-card__name">Hibachi Chicken</h3>
+              <p class="plate-card__desc">Teriyaki-glazed free-range chicken breast, sesame fried rice, broccoli &amp; grilled squash</p>
+              <div class="plate-card__includes">
+                <span class="include-tag">Fried Rice</span>
+                <span class="include-tag">Grilled Veggies</span>
+                <span class="include-tag">Yum Yum Sauce</span>
+              </div>
+              <div class="plate-card__footer">
+                <span class="plate-card__price">$28</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plate-card">
+            <div class="plate-card__img">
+              <img src="ShrimpPlate.png" alt="Volcano Shrimp plate" loading="lazy" />
+            </div>
+            <div class="plate-card__body">
+              <h3 class="plate-card__name">Volcano Shrimp</h3>
+              <p class="plate-card__desc">Jumbo shrimp flipped tableside over blazing flame, hibachi fried rice, caramelized onions</p>
+              <div class="plate-card__includes">
+                <span class="include-tag">Fried Rice</span>
+                <span class="include-tag">Grilled Veggies</span>
+                <span class="include-tag">Yum Yum Sauce</span>
+              </div>
+              <div class="plate-card__footer">
+                <span class="plate-card__price">$34</span>
+                <span class="plate-card__badge">Most Popular</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plate-card">
+            <div class="plate-card__img">
+              <img src="CalamriPlate.jpg" alt="Calamari Hibachi plate" loading="lazy" />
+            </div>
+            <div class="plate-card__body">
+              <h3 class="plate-card__name">Calamari Hibachi</h3>
+              <p class="plate-card__desc">Grilled calamari rings over open flame, sesame fried rice, mixed vegetables &amp; ponzu drizzle</p>
+              <div class="plate-card__includes">
+                <span class="include-tag">Fried Rice</span>
+                <span class="include-tag">Grilled Veggies</span>
+                <span class="include-tag">Ponzu Sauce</span>
+              </div>
+              <div class="plate-card__footer">
+                <span class="plate-card__price">$32</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="plate-card">
+            <div class="plate-card__img">
+              <img src="Vegetarian.png" alt="Garden Hibachi vegetarian plate" loading="lazy" />
+            </div>
+            <div class="plate-card__body">
+              <h3 class="plate-card__name">Garden Hibachi</h3>
+              <p class="plate-card__desc">Seasonal vegetables, portobello mushrooms, peppers &amp; zucchini over rice with sesame glaze</p>
+              <div class="plate-card__includes">
+                <span class="include-tag">Fried Rice</span>
+                <span class="include-tag">Sesame Glaze</span>
+                <span class="include-tag">Spicy Ponzu</span>
+              </div>
+              <div class="plate-card__footer">
+                <span class="plate-card__price">$22</span>
+                <span class="plate-card__badge">Vegetarian</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /plates-grid -->
+
+        <div class="combo-note">
+          <p>Want to mix &amp; match? Try our <strong>Combo Plates</strong> — choose any two proteins for the perfect Kerbachi experience.</p>
+          <button class="tab-btn" onclick="switchTab('combos')" style="margin:0 auto;">See Combo Options</button>
+        </div>
+
+      </section><!-- /hibachi -->
+
+      <!-- ── STARTERS ── -->
+      <section id="starters" class="menu-category" role="tabpanel">
+        <div class="category-header">
+          <h2>Starters &amp; Sides</h2>
+          <p>The perfect beginning to your hibachi experience</p>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Ginger Salad</div>
+              <div class="menu-list-item__desc">Crisp iceberg, carrot, cucumber &amp; our house ginger dressing</div>
+            </div>
+            <div class="menu-list-item__price">$6</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Miso Soup</div>
+              <div class="menu-list-item__desc">Traditional white miso, tofu, seaweed &amp; green onion</div>
+            </div>
+            <div class="menu-list-item__price">$5</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Gyoza (6 pcs)</div>
+              <div class="menu-list-item__desc">Pan-seared pork &amp; ginger dumplings, ponzu dipping sauce</div>
+            </div>
+            <div class="menu-list-item__price">$10</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Edamame</div>
+              <div class="menu-list-item__desc">Steamed edamame with sea salt &amp; togarashi</div>
+            </div>
+            <div class="menu-list-item__price">$7</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Crispy Spring Rolls (4 pcs)</div>
+              <div class="menu-list-item__desc">Vegetable &amp; glass noodle rolls, sweet chili sauce</div>
+            </div>
+            <div class="menu-list-item__price">$9</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Spicy Tuna Tataki</div>
+              <div class="menu-list-item__desc">Seared tuna, spicy mayo, microgreens &amp; sesame seeds</div>
+            </div>
+            <div class="menu-list-item__price">$16</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Hibachi Fried Rice (extra)</div>
+              <div class="menu-list-item__desc">Extra serving of our signature sesame fried rice</div>
+            </div>
+            <div class="menu-list-item__price">$6</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Onion Soup</div>
+              <div class="menu-list-item__desc">Rich beef broth, caramelized onions, crispy mushrooms</div>
+            </div>
+            <div class="menu-list-item__price">$6</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── COMBOS ── -->
+      <section id="combos" class="menu-category" role="tabpanel">
+        <div class="category-header">
+          <h2>Combo Plates</h2>
+          <p>Choose two proteins — double the fire, double the flavor</p>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Steak &amp; Chicken</div>
+              <div class="menu-list-item__desc">Hibachi filet &amp; teriyaki chicken, fried rice &amp; vegetables</div>
+            </div>
+            <div class="menu-list-item__price">$42</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Steak &amp; Shrimp</div>
+              <div class="menu-list-item__desc">Hibachi filet &amp; jumbo shrimp, fried rice &amp; vegetables</div>
+            </div>
+            <div class="menu-list-item__price">$48</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Chicken &amp; Shrimp</div>
+              <div class="menu-list-item__desc">Teriyaki chicken &amp; volcano shrimp, fried rice &amp; vegetables</div>
+            </div>
+            <div class="menu-list-item__price">$38</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">New York Strip &amp; Shrimp</div>
+              <div class="menu-list-item__desc">USDA prime NY strip &amp; jumbo shrimp, fried rice &amp; vegetables</div>
+            </div>
+            <div class="menu-list-item__price">$56</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Calamari &amp; Chicken</div>
+              <div class="menu-list-item__desc">Grilled calamari &amp; teriyaki chicken, fried rice &amp; vegetables</div>
+            </div>
+            <div class="menu-list-item__price">$38</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Steak, Shrimp &amp; Chicken</div>
+              <div class="menu-list-item__desc">The ultimate triple combo — fried rice &amp; vegetables</div>
+            </div>
+            <div class="menu-list-item__price">$58</div>
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-divider__line"></div>
+          <div class="section-divider__label">Kids Menu</div>
+          <div class="section-divider__line"></div>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Kids Hibachi Chicken</div>
+              <div class="menu-list-item__desc">Smaller portion of teriyaki chicken with fried rice &amp; veggies (Ages 10 &amp; under)</div>
+            </div>
+            <div class="menu-list-item__price">$16</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Kids Hibachi Shrimp</div>
+              <div class="menu-list-item__desc">Smaller portion of shrimp with fried rice &amp; veggies (Ages 10 &amp; under)</div>
+            </div>
+            <div class="menu-list-item__price">$18</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── DRINKS & SAKE ── -->
+      <section id="drinks" class="menu-category" role="tabpanel">
+        <div class="category-header">
+          <h2>Drinks &amp; Sake</h2>
+          <p>Expertly paired to complement your hibachi experience</p>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-divider__line"></div>
+          <div class="section-divider__label">Sake Selection</div>
+          <div class="section-divider__line"></div>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Junmai Daiginjo</div>
+              <div class="menu-list-item__desc">Premium polished sake, floral &amp; fruity — served chilled (300ml)</div>
+            </div>
+            <div class="menu-list-item__price">$18</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Nigori Sake</div>
+              <div class="menu-list-item__desc">Cloudy unfiltered sake, creamy &amp; sweet (180ml)</div>
+            </div>
+            <div class="menu-list-item__price">$12</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Hot Sake</div>
+              <div class="menu-list-item__desc">Classic warmed sake, smooth &amp; earthy (180ml)</div>
+            </div>
+            <div class="menu-list-item__price">$10</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Sake Flight (3 varieties)</div>
+              <div class="menu-list-item__desc">Curated trio — junmai, nigori &amp; ginjo poured fresh</div>
+            </div>
+            <div class="menu-list-item__price">$24</div>
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-divider__line"></div>
+          <div class="section-divider__label">Craft Cocktails</div>
+          <div class="section-divider__line"></div>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Ember Mule</div>
+              <div class="menu-list-item__desc">Ginger beer, vodka, yuzu juice, fresh lime &amp; candied ginger</div>
+            </div>
+            <div class="menu-list-item__price">$14</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Samurai Sour</div>
+              <div class="menu-list-item__desc">Japanese whisky, lemon, honey syrup &amp; smoked black cherry</div>
+            </div>
+            <div class="menu-list-item__price">$16</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Dragon Lychee Martini</div>
+              <div class="menu-list-item__desc">Lychee vodka, elderflower, fresh lime &amp; dragon fruit garnish</div>
+            </div>
+            <div class="menu-list-item__price">$15</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Hibachi Sunset</div>
+              <div class="menu-list-item__desc">Tequila, blood orange, grenadine &amp; chili salt rim</div>
+            </div>
+            <div class="menu-list-item__price">$14</div>
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-divider__line"></div>
+          <div class="section-divider__label">Non-Alcoholic</div>
+          <div class="section-divider__line"></div>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Japanese Iced Tea</div>
+              <div class="menu-list-item__desc">Cold-brew green tea, lemon, honey &amp; mint</div>
+            </div>
+            <div class="menu-list-item__price">$6</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Yuzu Lemonade</div>
+              <div class="menu-list-item__desc">Fresh-pressed yuzu citrus, cane sugar &amp; sparkling water</div>
+            </div>
+            <div class="menu-list-item__price">$7</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Soft Drinks</div>
+              <div class="menu-list-item__desc">Coke, Diet Coke, Sprite, ginger ale — free refills</div>
+            </div>
+            <div class="menu-list-item__price">$4</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Sparkling Water</div>
+              <div class="menu-list-item__desc">San Pellegrino (750ml)</div>
+            </div>
+            <div class="menu-list-item__price">$5</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── DESSERTS ── -->
+      <section id="desserts" class="menu-category" role="tabpanel">
+        <div class="category-header">
+          <h2>Desserts</h2>
+          <p>The perfect sweet ending to your hibachi experience</p>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Mochi Ice Cream (3 pcs)</div>
+              <div class="menu-list-item__desc">Choice of mango, green tea or strawberry — rice cake wrapped ice cream</div>
+            </div>
+            <div class="menu-list-item__price">$9</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Matcha Lava Cake</div>
+              <div class="menu-list-item__desc">Warm matcha chocolate lava cake, vanilla bean ice cream</div>
+            </div>
+            <div class="menu-list-item__price">$11</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Tempura Cheesecake</div>
+              <div class="menu-list-item__desc">Deep-fried cheesecake bites, strawberry sauce &amp; whipped cream</div>
+            </div>
+            <div class="menu-list-item__price">$10</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Black Sesame Crème Brûlée</div>
+              <div class="menu-list-item__desc">Classic crème brûlée infused with toasted black sesame</div>
+            </div>
+            <div class="menu-list-item__price">$10</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Banana Tempura</div>
+              <div class="menu-list-item__desc">Light tempura-battered banana, honey drizzle &amp; sesame ice cream</div>
+            </div>
+            <div class="menu-list-item__price">$8</div>
+          </div>
+          <div class="menu-list-item">
+            <div class="menu-list-item__text">
+              <div class="menu-list-item__name">Yuzu Sorbet</div>
+              <div class="menu-list-item__desc">House-made yuzu citrus sorbet, fresh mint &amp; candied zest</div>
+            </div>
+            <div class="menu-list-item__price">$8</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESERVE BANNER -->
+      <div class="reserve-banner">
+        <h3>Ready to Order?</h3>
+        <p>Call us or come by — we'll fire it up fresh for you. Kerman, CA.</p>
+        <a href="tel:+15595550100" class="btn-reserve">
+          <i class="fas fa-phone"></i>
+          (559) 555-0100
+        </a>
+      </div>
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="menu-footer">
+    <div class="container menu-footer__inner">
+      <p>&copy; 2026 Kerbachi Hibachi Grill &amp; Bar. All Rights Reserved.</p>
+      <p>
+        <a href="tel:+15595550100"><i class="fas fa-phone"></i> (559) 555-0100</a> &nbsp;&bull;&nbsp; Kerman, CA 93630
+        &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+        <a href="index.html">Back to Home</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switching
+    const tabBtns  = document.querySelectorAll('.tab-btn[data-target]');
+    const sections = document.querySelectorAll('.menu-category');
+
+    function switchTab(target) {
+      tabBtns.forEach(btn => {
+        const isActive = btn.dataset.target === target;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive);
+      });
+      sections.forEach(sec => {
+        sec.classList.toggle('visible', sec.id === target);
+      });
+      // Smooth scroll to top of menu body
+      document.querySelector('.menu-body').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => switchTab(btn.dataset.target));
+    });
+  </script>
+</body>
+</html>
