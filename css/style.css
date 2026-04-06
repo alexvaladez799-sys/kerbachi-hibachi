@@ -492,7 +492,6 @@ button  { background: none; border: none; cursor: pointer; }
 
 .dish-row__img {
   overflow: hidden;
-  background: var(--ink-1);
 }
 .dish-row__img img {
   width: 100%;
@@ -663,7 +662,6 @@ button  { background: none; border: none; cursor: pointer; }
   width: 100%;
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: var(--ink-1);
 }
 .about__img-frame img {
   width: 100%;
@@ -896,7 +894,6 @@ button  { background: none; border: none; cursor: pointer; }
 
 .gcell {
   overflow: hidden;
-  background: var(--ink-1);
   aspect-ratio: 4/3;
 }
 .gcell--tall { aspect-ratio: 3/4; grid-row: span 2; }
