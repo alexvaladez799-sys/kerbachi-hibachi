@@ -1,82 +1,65 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const dishes = [
-  {
-    num: '01',
-    name: 'Hibachi Steak',
-    desc: 'Prime beef teppanyaki-seared over open flame. Served with hibachi fried rice, grilled vegetables, and your choice of sauce.',
-    price: '$18',
-    tag: 'Best Seller',
-    img: '/images/steak-plate.png',
-    alt: 'Hibachi Steak Plate',
-  },
-  {
-    num: '02',
-    name: 'Volcano Shrimp',
-    desc: 'Jumbo tiger shrimp, hibachi butter, signature yum yum sauce — bright, bold, and impossible to put down.',
-    price: '$16',
-    tag: 'Fan Favorite',
-    img: '/images/shrimp-plate.png',
-    alt: 'Volcano Shrimp Plate',
-    flip: true,
-  },
-  {
-    num: '03',
-    name: 'Hibachi Chicken',
-    desc: 'Teriyaki-glazed chicken, teppanyaki style. Clean heat, rich glaze, and every bite cooked to order.',
-    price: '$14',
-    tag: null,
-    img: '/images/chicken-plate.png',
-    alt: 'Hibachi Chicken Plate',
-  },
-];
-
 export default function Dishes() {
   return (
-    <section className="dishes" id="featured">
-      <div className="container">
-        <div className="dishes__header">
-          <span className="idx">Customer Favorites</span>
-          <h2 className="display-title">
-            Cooked to order,<br /><em>every time.</em>
-          </h2>
+    <section id="featured" className="dishes">
+
+      <div className="dishes__header container">
+        <span className="idx">01</span>
+        <h2 className="display-title">Customer Favorites</h2>
+      </div>
+
+      <div className="dish-row">
+        <div className="dish-row__img">
+          <Image src="/images/steak-plate.png" alt="Hibachi Steak" width={960} height={720} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+        </div>
+        <div className="dish-row__body">
+          <span className="dish-row__num">01</span>
+          <h3 className="dish-row__name">Hibachi Steak</h3>
+          <p className="dish-row__desc">Prime beef, teppanyaki-seared over open flame. Sesame fried rice, grilled vegetables, ginger salad.</p>
+          <div className="dish-row__foot">
+            <span className="dish-price">$18</span>
+            <a href="#order" className="link-arrow">Order This <span>→</span></a>
+          </div>
         </div>
       </div>
 
-      {dishes.map((dish) => (
-        <div
-          key={dish.num}
-          className={`dish-row${dish.flip ? ' dish-row--flip' : ''}`}
-        >
-          <div className="dish-row__img">
-            <Image
-              src={dish.img}
-              alt={dish.alt}
-              width={960}
-              height={720}
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            />
-          </div>
-          <div className="dish-row__body">
-            <span className="dish-row__num">{dish.num}</span>
-            <h3 className="dish-row__name">{dish.name}</h3>
-            <p className="dish-row__desc">{dish.desc}</p>
-            <div className="dish-row__foot">
-              <span className="dish-price">{dish.price}</span>
-              {dish.tag && <span className="dish-tag">{dish.tag}</span>}
-            </div>
-          </div>
+      <div className="dish-row dish-row--flip">
+        <div className="dish-row__img">
+          <Image src="/images/shrimp-plate.png" alt="Volcano Shrimp" width={960} height={720} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
         </div>
-      ))}
-
-      <div className="container">
-        <div className="dishes__viewall">
-          <Link href="/menu" className="link-arrow link-arrow--lg">
-            View Full Menu <span>&rarr;</span>
-          </Link>
+        <div className="dish-row__body">
+          <span className="dish-row__num">02</span>
+          <h3 className="dish-row__name">Volcano Shrimp</h3>
+          <p className="dish-row__desc">Jumbo tiger shrimp, hibachi butter glaze. Fried rice, signature yum yum sauce.</p>
+          <div className="dish-row__foot">
+            <span className="dish-price">$16</span>
+            <a href="#order" className="link-arrow">Order This <span>→</span></a>
+          </div>
         </div>
       </div>
+
+      <div className="dish-row">
+        <div className="dish-row__img">
+          <Image src="/images/new-york-steak.png" alt="New York Strip" width={960} height={720} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+        </div>
+        <div className="dish-row__body">
+          <span className="dish-row__num">03</span>
+          <h3 className="dish-row__name">New York Strip</h3>
+          <p className="dish-row__desc">USDA prime cut, hibachi butter sear. Fried rice, grilled vegetables, house sauce.</p>
+          <div className="dish-row__foot">
+            <span className="dish-price">$20</span>
+            <span className="dish-tag">Premium Cut</span>
+            <a href="#order" className="link-arrow">Order This <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div className="dishes__viewall container">
+        <Link href="/menu" className="link-arrow link-arrow--lg">View Full Menu <span>→</span></Link>
+      </div>
+
     </section>
   );
 }
