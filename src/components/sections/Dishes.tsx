@@ -12,7 +12,7 @@ export default function Dishes() {
 
       <div className="dish-row">
         <div className="dish-row__img">
-          <Image src="/images/steak-plate.png" alt="Hibachi Steak" width={960} height={720} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+          <Image src="/images/steak-plate.png" alt="Hibachi Steak" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 55vw" />
         </div>
         <div className="dish-row__body">
           <span className="dish-row__num">01</span>
@@ -27,7 +27,7 @@ export default function Dishes() {
 
       <div className="dish-row dish-row--flip">
         <div className="dish-row__img">
-          <Image src="/images/shrimp-plate.png" alt="Volcano Shrimp" width={960} height={720} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+          <Image src="/images/shrimp-plate.png" alt="Volcano Shrimp" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 45vw" />
         </div>
         <div className="dish-row__body">
           <span className="dish-row__num">02</span>
@@ -42,7 +42,7 @@ export default function Dishes() {
 
       <div className="dish-row">
         <div className="dish-row__img">
-          <Image src="/images/new-york-steak.png" alt="New York Strip" width={960} height={720} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+          <Image src="/images/new-york-steak.png" alt="New York Strip" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 55vw" />
         </div>
         <div className="dish-row__body">
           <span className="dish-row__num">03</span>
