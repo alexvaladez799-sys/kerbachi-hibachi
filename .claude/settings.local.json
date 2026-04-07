@@ -1,10 +1,23 @@
 {
   "permissions": {
     "allow": [
+      "Bash(for d:*)",
+      "Bash(do echo:*)",
+      "Read(//Users/roblegacy/Library/Mobile Documents/com~apple~CloudDocs/APP STUFF/**)",
+      "Bash(done)",
+      "WebFetch(domain:kerbachi-hibachi.vercel.app)",
+      "Bash(npm install:*)",
+      "Bash(export PATH=\"/usr/local/bin:$PATH\")",
+      "Bash(npm -v)",
       "Bash(npm run:*)",
-      "mcp__claude_ai_Vercel__list_teams",
-      "mcp__claude_ai_Vercel__list_projects",
-      "mcp__claude_ai_Vercel__list_deployments"
+      "Bash(curl -sS -o /tmp/kerb-home.html -w \"HTTP %{http_code} size=%{size_download}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -sS -o /tmp/kerb-menu.html -w \"HTTP %{http_code} size=%{size_download}\\\\n\" http://localhost:5173/menu)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx wrangler:*)",
+      "Bash(curl -sSI https://kerbachi.pages.dev/ -o /dev/null -w \"root: %{http_code}\\\\n\")",
+      "Bash(curl -sSI https://kerbachi.pages.dev/menu -o /dev/null -w \"menu: %{http_code}\\\\n\")",
+      "Bash(curl -sSI https://kerbachi.pages.dev/images/logo.png -o /dev/null -w \"logo: %{http_code}\\\\n\")",
+      "Bash(whois -h whois.verisign-grs.com kerbachi.dev)"
     ]
   }
 }
